@@ -1,0 +1,35 @@
+/**
+ * @overview CSS layout of ccmjs-based web component for a data-cloud user.
+ * @author André Kless <andre.kless@web.de> 2023
+ * @license The MIT License (MIT)
+ */
+
+#user-section {
+  min-width: min-content;
+}
+
+#user-section > * {
+  cursor: pointer;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+}
+
+.icon[src=''] {
+  display: none;
+}
+
+dialog {
+  background-color: white;
+}
+
+dialog.denied {
+  animation: denied 0.3s;
+}
+
+@keyframes denied {
+  0% { background: red; }
+  100% { background: white; }
+}

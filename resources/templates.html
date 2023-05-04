@@ -1,0 +1,76 @@
+<!--
+* @overview HTML templates of ccmjs-based web component for a data-cloud user.
+* @author André Kless <andre.kless@web.de> 2023
+* @license The MIT License (MIT)
+-->
+
+<ccm-template key="main">
+  <section class="d-flex justify-content-end align-items-center p-2" id="user-section">
+    <span class="text-nowrap me-2" onclick="%onClickProfile%">%user%</span>
+    <img class="rounded icon me-2" src="%picture_url%" onclick="%onClickProfile%">
+    <button class="btn btn-primary btn-sm" onclick="%onClickLoginLogout%">%loginLogoutCaption%</button>
+  </section>
+  <dialog class="rounded" id="login-dialog">
+    <form id="login-form" onsubmit="%onSubmitLogin%">
+      <h1>%login_form%</h1>
+      <section class="my-3">
+        <label class="form-label" for="login-username">%username%:</label>
+        <input class="form-control" type="text" name="username" id="login-username">
+      </section>
+      <section class="my-3">
+        <label class="form-label" for="login-password">%password%:</label>
+        <input class="form-control" type="password" name="password" id="login-password" autocomplete="current-password">
+      </section>
+      <section class="d-flex justify-content-between">
+        <button class="btn btn-primary me-2" id="login-submit">%login_btn%</button>
+        <button class="btn btn-secondary btn-sm" type="button" onclick="%onCancelLogin%">%cancel_btn%</button>
+      </section>
+      <section class="d-flex align-items-center mt-3">
+        <span>No Account?</span>
+        <button class="btn btn-link" type="button" onclick="%onClickRegister%">%register_btn%</button>
+      </section>
+    </form>
+  </dialog>
+  <dialog class="rounded" id="register-dialog">
+    <form id="register-form" onsubmit="%onSubmitRegister%">
+      <h1>%register_form%</h1>
+      <section class="my-3">
+        <label class="form-label" for="register-username">%username%:</label>
+        <input class="form-control" type="text" name="username" id="register-username">
+      </section>
+      <section class="my-3">
+        <label class="form-label" for="register-password">%password%:</label>
+        <input class="form-control" type="password" name="password" autocomplete="current-password" id="register-password">
+      </section>
+      <section class="d-flex justify-content-between">
+        <button class="btn btn-primary me-2" id="register-submit">%register_btn%</button>
+        <button class="btn btn-secondary btn-sm" type="button" onclick="%onCancelRegister%">%cancel_btn%</button>
+      </section>
+    </form>
+  </dialog>
+  <dialog class="rounded" id="profile-dialog">
+    <form id="profile-form" onsubmit="%onSubmitProfile%">
+      <h1>%profile_form%</h1>
+      <section class="my-3">
+        <label class="form-label" for="profile-user">%username%:</label>
+        <input class="form-control" type="text" name="user" id="profile-user">
+      </section>
+      <section class="my-3">
+        <label class="form-label" for="profile-name">%realname%:</label>
+        <input class="form-control" type="text" name="name" id="profile-name">
+      </section>
+      <section class="my-3">
+        <label class="form-label" for="profile-picture">%picture%:</label>
+        <input class="form-control" type="url" name="picture" id="profile-picture">
+      </section>
+      <section class="d-flex justify-content-between my-3">
+        <button class="btn btn-primary me-2" id="profile-submit">%profile_btn%</button>
+        <button class="btn btn-secondary btn-sm" type="button" onclick="%onCancelProfile%">%cancel_btn%</button>
+      </section>
+      <section class="d-flex justify-content-between">
+        <button class="btn btn-link btn-sm p-0 me-3" type="button" id="change_pw-btn" onclick="%onChangePassword%">%change_pw_btn%</button>
+        <button class="btn btn-link btn-sm text-danger p-0 ms-3" type="button" id="delete-btn" onclick="%onDeleteProfile%">%delete_btn%</button>
+      </section>
+    </form>
+  </dialog>
+</ccm-template>
